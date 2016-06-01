@@ -14,6 +14,7 @@ group :doc do
 end
 
 group :test do
-  gem 'guard-minitest', '2.3.1'
-  gem 'turn'
+  gem 'minitest-reporters'
+  gem 'mini_backtrace'
+  gem 'guard-minitest'
 end
