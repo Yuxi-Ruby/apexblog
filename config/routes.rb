@@ -1,9 +1,11 @@
 Apexblog::Application.routes.draw do
+  get "static_pages/home"
+  get "static_pages/index"
   devise_for :users
 
   devise_scope :user do
     authenticated :user do
-      root 'home#index', as: :authenticated_root
+      root 'static_pages#home', as: :authenticated_root
     end
 
     unauthenticated do
