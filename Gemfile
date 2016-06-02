@@ -11,6 +11,7 @@ gem 'jbuilder', '~> 1.2'
 gem 'devise'
 gem 'figaro'
 gem 'rails_admin'
+gem 'annotate'
 
 group :doc do
   gem 'sdoc', require: false
