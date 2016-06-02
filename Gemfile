@@ -8,9 +8,9 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
-
 gem 'devise'
-gem "figaro"
+gem 'figaro'
+gem 'rails_admin'
 
 group :doc do
   gem 'sdoc', require: false
