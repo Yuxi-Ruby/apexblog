@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: articles
+#
+#  id          :integer          not null, primary key
+#  title       :string
+#  description :string
+#  body        :string
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 class Article < ActiveRecord::Base
 	validates :title, presence: true, length: {maximum: 40, minimum: 5}
 	validates :body, presence: true, if: "description.nil?"
