@@ -13,7 +13,7 @@
 
 ActiveRecord::Schema.define(version: 20160601192856) do
 
-  create_table "articles", force: true do |t|
+  create_table "articles", force: :cascade do |t|
     t.string   "title"
     t.string   "description"
     t.string   "body"
@@ -21,13 +21,13 @@ ActiveRecord::Schema.define(version: 20160601192856) do
     t.datetime "updated_at"
   end
 
-  create_table "categories", force: true do |t|
+  create_table "categories", force: :cascade do |t|
     t.string   "title"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
     t.string   "reset_password_token"
