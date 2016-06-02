@@ -9,7 +9,7 @@ class UserTest < ActiveSupport::TestCase
 
   test "should be valid" do
     @user.valid?
-    puts "@user.errors #{@user.errors.to_json}"
+    # puts "@user.errors #{@user.errors.to_json}"
   end
 
   test "password should be present (nonblank)" do
@@ -22,10 +22,32 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
-  test "name should be present" do
-    @user.name = "     "
-    assert_not @user.valid?
+  test "password" do
+    @user.password = @user.password_confirmation = "a" * 73
+    @user.valid?
+    assert_match "is too long (maximum is 72 characters)", @user.errors[:password].join, "password field should have max 72 characters"
   end
+
+  test "name should be present" do
+    @user.name = nil
+    assert_not @user.valid?, "should be name presence"
+  end
+
+  test "email should be unique" do
+  	user = User.create(:name => "Steven", :email => "steven@hotmail.com")
+  	user.valid?
+    assert_match "has already been taken", user.errors[:email].join, "has already been taken this email"
+  end
+# yet not function
+ #  test "name field length" do
+	# 	user = users(:one)
+ #  	user.valid?
+ #    puts "user.errors[:name].join -> #{user.errors[:name].join}"
+ #  	assert_match "is too short (minimum is 3 characters)", user.errors[:name].join, "Name field should have min 3 characters"
+	# end
+
+
+
 
 	#test "exist user model" do
 		#User_model_exist = users
