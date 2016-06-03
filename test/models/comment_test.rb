@@ -33,11 +33,11 @@ class CommentTest < ActiveSupport::TestCase
     assert_match "is too short (minimum is 2 characters)" , @comment_long_desc.errors[:description].join, "Minimum long error for description  is not found on comment.class"
   end
 
-  test "contains an user" do
-    assert_respond_to users(:esteban), @comment_valid.user, "Comment doesn't contain an author"
+  test "comment contains an user" do
+    assert_equal users(:esteban), @comment_valid.user, "Comment doesn't contain an user"
   end
 
-  test "contains an article" do
-    assert  articles(:valid) ==  @comment_valid.article
+  test "comment contains an article" do
+    assert_equal articles(:valid), @comment_valid.article, "Comment doesn't contain an article"
   end
 end
