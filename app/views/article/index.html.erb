@@ -1,0 +1,98 @@
+<!-- blog -->
+	<div class="blog">
+		<div class="container">
+			<div class="col-md-7 blog-left">
+			<% Article.all.each do |article| %>
+				<div class="blog-left-grid">
+					<h4><a href="single.html"><%= article.title %></a></h4>
+					<ul>
+						<li><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><%= article.created_at %></li>
+						<li><a href="#"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>10 Comments</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Super User</a></li>
+						<li><a href="#"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>3 Tags</a></li>
+					</ul>
+					<a href="single.html"><img src="images/6.jpg" alt=" " class="img-responsive" /></a>
+					<p><%= article.description %></p>
+					<div class="more">
+						<%= link_to "Learn More", article_path(article) %>
+						<!-- <a href="" class="hvr-curl-bottom-right">Learn More</a> -->
+					</div>
+				</div>
+			<% end%>
+			</div>
+			<div class="col-md-5 blog-right">
+				<div class="blog-right1">
+					<div class="search">
+						<h3>Newsletter</h3>
+						<form>
+							<input type="text" value="Email..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email...';}" required="">
+							<input type="submit" value="Subscribe">
+						</form>
+					</div>
+					<div class="categories">
+						<h3>Categories</h3>
+						<ul>
+							<li><a href="#">Aliquam dapibus tincidunt</a></li>
+							<li><a href="#">Donec sollicitudin molestie</a></li>
+							<li><a href="#">Fusce feugiat malesuada odio</a></li>
+							<li><a href="#">Cum sociis natoque penatibus</a></li>
+							<li><a href="#">Magnis dis parturient montes</a></li>
+							<li><a href="#">Donec sollicitudin molestie</a></li>
+						</ul>
+					</div>
+					<div class="categories categories-mid">
+						<h3>Archieves</h3>
+						<ul>
+							<li><a href="#">May 20,2009</a></li>
+							<li><a href="#">July 31,2010</a></li>
+							<li><a href="#">January 20,2012</a></li>
+							<li><a href="#">November 2,2012</a></li>
+							<li><a href="#">December 25,2014</a></li>
+							<li><a href="#">September 18,2015</a></li>
+						</ul>
+					</div>
+					<div class="related-posts">
+						<h3>Related Posts</h3>
+						<div class="related-post">
+							<div class="related-post-left">
+								<a href="single.html"><img src="images/3.jpg" alt=" " /></a>
+							</div>
+							<div class="related-post-right">
+								<h4><a href="single.html">Donec sollicitudin</a></h4>
+								<p>Aliquam dapibus tincidunt metus.
+									<span>Praesent justo dolor, lobortis.</span>
+								</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="related-post">
+							<div class="related-post-left">
+								<a href="single.html"><img src="images/4.jpg" alt=" " /></a>
+							</div>
+							<div class="related-post-right">
+								<h4><a href="single.html">Donec sollicitudin</a></h4>
+								<p>Aliquam dapibus tincidunt metus.
+									<span>Praesent justo dolor, lobortis.</span>
+								</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+						<div class="related-post">
+							<div class="related-post-left">
+								<a href="single.html"><img src="images/2.jpg" alt=" " /></a>
+							</div>
+							<div class="related-post-right">
+								<h4><a href="single.html">Donec sollicitudin</a></h4>
+								<p>Aliquam dapibus tincidunt metus.
+									<span>Praesent justo dolor, lobortis.</span>
+								</p>
+							</div>
+							<div class="clearfix"> </div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="clearfix"> </div>
+		</div>
+	</div>
+<!-- //blog -->
