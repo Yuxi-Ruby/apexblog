@@ -35,17 +35,17 @@ class UserTest < ActiveSupport::TestCase
   end
 
   test "should be valid" do
-    @user.valid?
+    assert @user.valid?, "@user should be valid"
   end
 
   test "password should be not present (nonblank)" do
     @user.password = @user.password_confirmation = " " * 8
-    assert_not @user.valid?
+    assert_not @user.valid?, "password should be blank"
   end
 
   test "password should have a minimum length" do
     @user.password = @user.password_confirmation = "a" * 7
-    assert_not @user.valid?
+    assert_not @user.valid?, "password should have a minimum length"
   end
 
   test "password should have a maximum length" do
@@ -54,15 +54,15 @@ class UserTest < ActiveSupport::TestCase
     assert_match "is too long (maximum is 72 characters)", @user.errors[:password].join, "password field should have max 72 characters"
   end
 
-  test "name should not be present" do
+  test "name should be not present" do
     @user.name = nil
-    assert_not @user.valid?, "should be name presence"
+    assert_not @user.valid?, "should be not name presence"
   end
 
 	test "name should be too long" do
-    @user.name = "2" * 222
+    @user.name = "2" * 101
     @user.valid?
-  	assert_match "is too long (maximum is 10 characters)", @user.errors[:name].join, "name should be too long"
+  	assert_match "is too long (maximum is 100 characters)", @user.errors[:name].join, "name should be too long"
   end
 
   test "name should be not too long" do
@@ -74,7 +74,7 @@ class UserTest < ActiveSupport::TestCase
   test "email should be not unique" do
   	duplicate_user = @user.dup
   	@user.save
-    assert_not duplicate_user.valid?
+    assert_not duplicate_user.valid?, "email should be not unique"
   end
 
 	test "email field should be not presence" do
