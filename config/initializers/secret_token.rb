@@ -9,4 +9,4 @@
 
 # Make sure your secret_key_base is kept private
 # if you're sharing your code publicly.
-Apexblog::Application.config.secret_key_base = 'cd722cde2ae939d4d10a3b11cb5745fa1546e91ad1011dce66434297e4243d67ac79138b3d1e18c5cb54280fd3f4a72f1ec7be40bb80e0888d00dd761081e7bf'
+Rails.application.config.secret_key_base = 'cd722cde2ae939d4d10a3b11cb5745fa1546e91ad1011dce66434297e4243d67ac79138b3d1e18c5cb54280fd3f4a72f1ec7be40bb80e0888d00dd761081e7bf'
