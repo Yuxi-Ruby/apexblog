@@ -18,6 +18,8 @@
 #                          PATCH  /users(.:format)               registrations#update
 #                          PUT    /users(.:format)               registrations#update
 #                          DELETE /users(.:format)               registrations#destroy
+#                 articles GET    /articles(.:format)            articles#index
+#                  article GET    /articles/:id(.:format)        articles#show
 #
 # Routes for RailsAdmin::Engine:
 #   dashboard GET         /                                      rails_admin/main#dashboard
@@ -38,4 +40,6 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :users, :controllers => { registrations: 'registrations' }
+
+  resources :articles, :only => [:index, :show]
 end
