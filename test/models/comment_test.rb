@@ -34,7 +34,7 @@ class CommentTest < ActiveSupport::TestCase
   end
 
   test "comment contains an user" do
-    assert_equal users(:esteban), @comment_valid.user, "Comment doesn't contain an user"
+    assert_equal users(:two), @comment_valid.user, "Comment doesn't contain an user"
   end
 
   test "comment contains an article" do

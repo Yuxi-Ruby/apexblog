@@ -7,11 +7,11 @@ not_presence:
 
 not_long_desc:
   description: "R"
-  user: 1
+  user: one
   article: valid
 valid:
   description: "I suppose yo research about it a lot in order to understand that point"
-  user: 1
+  user: two
   article: valid
 
 
