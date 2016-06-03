@@ -38,7 +38,7 @@ class UserTest < ActiveSupport::TestCase
     assert @user.valid?, "@user should be valid"
   end
 
-  test "password should be not present (nonblank)" do
+  test "password should be present (nonblank)" do
     @user.password = @user.password_confirmation = " " * 8
     assert_not @user.valid?, "password should be blank"
   end
@@ -71,19 +71,19 @@ class UserTest < ActiveSupport::TestCase
   	assert_match "is too short (minimum is 3 characters)", @user.errors[:name].join, "name should be not too long"
   end
 
-  test "email should be not unique" do
+  test "email should be unique" do
   	duplicate_user = @user.dup
   	@user.save
     assert_not duplicate_user.valid?, "email should be not unique"
   end
 
-	test "email field should be not presence" do
+	test "email field should be presence" do
 		@user.email = ""
 		@user.valid?
 		assert_match "can't be blank", @user.errors[:email].join, "email field should be not presence"
 	end
 
-	test "email field should be not format totally correct" do
+	test "email field should be format valid" do
 		@user.email = "no_valido@.s"
 		result = valid_mail @user.email
 		assert result, "email field should be not format totally correct"
