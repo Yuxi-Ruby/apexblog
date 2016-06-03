@@ -38,4 +38,8 @@ Rails.application.routes.draw do
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
 
   devise_for :users, :controllers => { registrations: 'registrations' }
+
+  get :articles, to: 'article#index'
+
+  resources :article, :only => [:show]
 end
