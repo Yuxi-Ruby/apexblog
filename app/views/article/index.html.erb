@@ -4,14 +4,16 @@
 			<div class="col-md-7 blog-left">
 			<% Article.all.each do |article| %>
 				<div class="blog-left-grid">
-					<h4><a href="single.html"><%= article.title %></a></h4>
+					<h4>
+						<%= link_to article.title, article_path(article) %>
+					</h4>
 					<ul>
 						<li><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><%= article.created_at %></li>
 						<li><a href="#"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>10 Comments</a></li>
 						<li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Super User</a></li>
 						<li><a href="#"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>3 Tags</a></li>
 					</ul>
-					<a href="single.html"><img src="images/6.jpg" alt=" " class="img-responsive" /></a>
+					<a href=""><img src="6.jpg" alt=" " class="img-responsive" /></a>
 					<p><%= article.description %></p>
 					<div class="more">
 						<%= link_to "Learn More", article_path(article) %>
@@ -55,7 +57,7 @@
 						<h3>Related Posts</h3>
 						<div class="related-post">
 							<div class="related-post-left">
-								<a href="single.html"><img src="images/3.jpg" alt=" " /></a>
+								<a href="single.html"><img src="3.jpg" alt=" " /></a>
 							</div>
 							<div class="related-post-right">
 								<h4><a href="single.html">Donec sollicitudin</a></h4>
@@ -67,7 +69,7 @@
 						</div>
 						<div class="related-post">
 							<div class="related-post-left">
-								<a href="single.html"><img src="images/4.jpg" alt=" " /></a>
+								<a href="single.html"><img src="4.jpg" alt=" " /></a>
 							</div>
 							<div class="related-post-right">
 								<h4><a href="single.html">Donec sollicitudin</a></h4>
@@ -79,7 +81,7 @@
 						</div>
 						<div class="related-post">
 							<div class="related-post-left">
-								<a href="single.html"><img src="images/2.jpg" alt=" " /></a>
+								<a href="single.html"><img src="2.jpg" alt=" " /></a>
 							</div>
 							<div class="related-post-right">
 								<h4><a href="single.html">Donec sollicitudin</a></h4>
