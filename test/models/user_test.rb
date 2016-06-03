@@ -50,4 +50,5 @@ class UserTest < ActiveSupport::TestCase
 		user_new = User.new(:name => 'Andrea', :email => 'stevssen@hotmail.com')
 		assert user_new.valid?, "¡Email field exist!"
 	end
+
 end
