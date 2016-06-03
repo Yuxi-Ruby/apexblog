@@ -7,8 +7,115 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
+  <!-- header -->
+  <div class="header">
+    <div class="container">
+      <div class="header-nav">
+        <nav class="navbar navbar-default">
+          <!-- Brand and toggle get grouped for better mobile display -->
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <div class="logo">
+              <a class="navbar-brand" href="index.html">Optometry <span>We Care Your Eyes</span></a>
+            </div>
+          </div>
 
-<%= yield %>
+          <!-- Collect the nav links, forms, and other content for toggling -->
+          <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+           <ul class="nav navbar-nav cl-effect-14">
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Articles", articles_path %></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <% if user_signed_in? %>
+              <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
+              <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+              <li>Logged in as <strong><%= current_user.email %></strong></li>
+            <% else %>
+              <li><%= link_to 'Sign up', new_user_registration_path %></li>
+              <li><%= link_to 'Login', new_user_session_path %></li>
+            <% end%>
+            </ul>
+          </div><!-- /.navbar-collapse -->
+        </nav>
+      </div>
+    </div>
+  </div>
+<!-- //header -->
+  <div class="container">
+    <div class="nav">
 
+    </div>
+
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, id: "flash_#{name}" %>
+    <% end %>
+
+    <%= yield %>
+  </div>
+
+  <!-- footer -->
+  <div class="footer">
+    <div class="container">
+      <div class="footer-grids">
+        <div class="col-md-3 footer-grid">
+          <h3 class="title">Services</h3>
+          <ul>
+            <li><a href="#">Rerum hic tenetur</a></li>
+            <li><a href="#">Molestiae non recusandae</a></li>
+            <li><a href="#">Voluptates repudiandae</a></li>
+            <li><a href="#">Necessitatibus saepe</a></li>
+            <li><a href="#">Debitis aut rerum</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 footer-grid ctact-grid">
+          <h3 class="title">Information</h3>
+           <ul>
+            <li><a href="#">Quibusdam et aut</a></li>
+            <li><a href="#">Testimonals</a></li>
+            <li><a href="#">Archives</a></li>
+            <li><a href="#">Repudiandae</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 footer-grid ctact-grid">
+          <h3 class="title">More details</h3>
+          <ul>
+            <li><a href="#">About us</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms &amp; Conditions</a></li>
+            <li><a href="contact.html">Sitemap</a></li>
+          </ul>
+        </div>
+        <div class="col-md-3 footer-grid contact-grid">
+            <h3 class="title">Contact us</h3>
+            <ul>
+              <li><span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span>Newyork Still Road.</li>
+              <li class="adrs">756 gt globel Place</li>
+              <li><span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>+000 100 444 1111</li>
+              <li><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><a href="mailto:example@mail.com">mail@example.com</a></li>
+            </ul>
+        </div>
+        <div class="clearfix"> </div>
+      </div>
+    </div>
+  </div>
+  <div class="copy">
+    <div class="container">
+      <p>Copyright © 2016 Optometry. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+      <div class="social-icons">
+        <ul>
+          <li><a href="#" class="fb"></a></li>
+          <li><a href="#"></a></li>
+          <li><a href="#" class="gg"></a></li>
+          <li><a href="#" class="pn"></a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+<!--//footer-->
 </body>
 </html>
