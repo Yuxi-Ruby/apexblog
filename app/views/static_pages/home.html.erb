@@ -1,4 +1,100 @@
-<h1>Apex Blog</h1>
-<p>
-  This is the home page for the Apex blog application.
-</p>
+	<div class="events">
+		<div class="container">
+			<div class="events-grids">
+			<% @articles.each do |a| %>
+				<div class="col-md-4 events-grid">
+						<div class="col-xs-5 mnth-date-left">
+							<h4><span> <%= a.created_at.strftime("%b %d, %Y") %> </span></h4>
+						</div>
+						<div class="col-xs-7 mnth-date-right">
+							<p><%=  a.title %></p>
+						</div>
+						<div class="clearfix"> </div>
+						<p class="quasi"><%= truncate(a.description, length:50) %></p>
+						<div class="more m1">
+						<a  class="hvr-curl-bottom-right"
+							<%= link_to  "Learn More", articles_path %></a>
+						</div>
+				</div>
+		<%end%>
+		</div>
+			</div>
+			<div class="events-grids-bottom">
+				<div class="col-md-4 events-grids-btm">
+					<div class="col-xs-4 events-grids-btm-left">
+						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+					</div>
+					<div class="col-xs-8 events-grids-btm-right">
+						<h4><%= @articles.count %></h4>
+						<p>Our Articles of ApexBlog</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="col-md-4 events-grids-btm">
+					<div class="col-xs-4 events-grids-btm-left">
+						<span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
+					</div>
+					<div class="col-xs-8 events-grids-btm-right">
+						<h4><%=@categories.count%></h4>
+						<p>Categories of ApexBlog</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="col-md-4 events-grids-btm">
+					<div class="col-xs-4 events-grids-btm-left">
+						<span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+					</div>
+					<div class="col-xs-8 events-grids-btm-right">
+						<h4><%= @user.count %></h4>
+						<p>Users in our Blog</p>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		</div>
+	</div>
+<!-- //events -->
+<!-- testimonials -->
+	<div class="testimonials">
+		<div class="container">
+			<h3>Testimonials</h3>
+			<div class="testimonials-grids">
+				<div class="col-md-4 testimonials-grid">
+					<div class="col-xs-4 testimonials-grid-left">
+					</div>
+					<div class="col-xs-8 testimonials-grid-right">
+						<div class="testimonials-grid-right-p">
+							<p>Temporibus autem quibusdam et aut officiis debitis aut
+								rerum necessitatibus saepe eveniet.<span>Dr. Robert</span></p>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="col-md-4 testimonials-grid">
+					<div class="col-xs-4 testimonials-grid-left">
+					</div>
+					<div class="col-xs-8 testimonials-grid-right">
+						<div class="testimonials-grid-right-p">
+							<p>Temporibus autem quibusdam et aut officiis debitis aut
+								rerum necessitatibus saepe eveniet.<span>Dr. Laura</span></p>
+						</div>
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+				<div class="col-md-4 testimonials-grid">
+					<div class="col-xs-4 testimonials-grid-left">
+					</div>
+					<div class="col-xs-8 testimonials-grid-right">
+						<div class="testimonials-grid-right-p">
+							<p>Temporibus autem quibusdam et aut officiis debitis aut
+								rerum necessitatibus saepe eveniet.<span>Dr. Andrew Richard</span></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+<!-- //testimonials -->
+
+
