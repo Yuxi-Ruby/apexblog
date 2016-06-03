@@ -18,6 +18,8 @@
 #                          PATCH  /users(.:format)               registrations#update
 #                          PUT    /users(.:format)               registrations#update
 #                          DELETE /users(.:format)               registrations#destroy
+#                 articles GET    /articles(.:format)            articles#index
+#                  article GET    /articles/:id(.:format)        articles#show
 #
 # Routes for RailsAdmin::Engine:
 #   dashboard GET         /                                      rails_admin/main#dashboard
@@ -39,7 +41,5 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { registrations: 'registrations' }
 
-  get :articles, to: 'article#index'
-
-  resources :article, :only => [:show]
+  resources :articles, :only => [:index, :show]
 end

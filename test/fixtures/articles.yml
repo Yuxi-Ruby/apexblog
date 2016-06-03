@@ -3,9 +3,9 @@
 # Table name: articles
 #
 #  id          :integer          not null, primary key
-#  title       :string
-#  description :string
-#  body        :string
+#  title       :string(255)
+#  description :string(255)
+#  body        :string(255)
 #  created_at  :datetime
 #  updated_at  :datetime
 #
