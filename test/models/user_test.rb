@@ -9,7 +9,6 @@ class UserTest < ActiveSupport::TestCase
 
   test "should be valid" do
     @user.valid?
-    # puts "@user.errors #{@user.errors.to_json}"
   end
 
   test "password should be present (nonblank)" do
@@ -22,30 +21,41 @@ class UserTest < ActiveSupport::TestCase
     assert_not @user.valid?
   end
 
-  test "password" do
+  test "password should have a maximum length" do
     @user.password = @user.password_confirmation = "a" * 73
     @user.valid?
     assert_match "is too long (maximum is 72 characters)", @user.errors[:password].join, "password field should have max 72 characters"
   end
 
-  test "name should be present" do
+  test "name should not be present" do
     @user.name = nil
     assert_not @user.valid?, "should be name presence"
   end
 
-  test "email should be unique" do
-  	user = User.create(:name => "Steven", :email => "steven@hotmail.com")
-  	user.valid?
-    assert_match "has already been taken", user.errors[:email].join, "has already been taken this email"
+	test "name should be too long" do
+    @user.name = "2" * 222
+    @user.valid?
+  	assert_match "is too long (maximum is 10 characters)", @user.errors[:name].join, "name should be too long"
+		# puts "user.errors[:name].join -> #{@user.errors[:name].join}"
   end
-# yet not function
- #  test "name field length" do
-	# 	user = users(:one)
- #  	user.valid?
- #    puts "user.errors[:name].join -> #{user.errors[:name].join}"
- #  	assert_match "is too short (minimum is 3 characters)", user.errors[:name].join, "Name field should have min 3 characters"
-	# end
 
+  test "name should be not too long" do
+    @user.name = "1" * 2
+    @user.valid?
+  	assert_match "is too short (minimum is 3 characters)", @user.errors[:name].join, "name should be not too long"
+  end
+
+  test "email should be unique" do
+  	duplicate_user = @user.dup
+  	@user.save
+    assert_not duplicate_user.valid?
+  end
+
+  test "email field should be not format valid" do
+  	@user.email = "malcorreo.com"
+		@user.valid?
+		assert_match "is invalidis invalid", @user.errors[:email].join, "email field not format valid"
+	end
 
 
 
