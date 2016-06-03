@@ -17,4 +17,8 @@ class Article < ActiveRecord::Base
 
 	validates :body, length: {maximum: 1500, minimum: 5}, if: "!body.nil?"
 	validates :description, length: {maximum: 150, minimum: 5}, if: "!description.nil?"
+
+   belongs_to :user
+   has_many :comments
+   has_and_belongs_to_many :categories
 end

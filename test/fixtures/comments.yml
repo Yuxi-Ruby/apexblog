@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+not_presence:
+  description:
+  user:
+  article:
+
+not_long_desc:
+  description: "R"
+  user: 1
+  article: valid
+valid:
+  description: "I suppose yo research about it a lot in order to understand that point"
+  user: 1
+  article: valid
+
+
