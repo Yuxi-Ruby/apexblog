@@ -1,3 +1,13 @@
+# == Schema Information
+#
+# Table name: categories
+#
+#  id         :integer          not null, primary key
+#  title      :string
+#  created_at :datetime
+#  updated_at :datetime
+#
+
 require 'test_helper'
 
 class CategoryTest < ActiveSupport::TestCase

@@ -1,3 +1,15 @@
+# == Schema Information
+#
+# Table name: articles
+#
+#  id          :integer          not null, primary key
+#  title       :string
+#  description :string
+#  body        :string
+#  created_at  :datetime
+#  updated_at  :datetime
+#
+
 class Article < ActiveRecord::Base
 	validates :title, presence: true, length: {maximum: 40, minimum: 5}
 	validates :body, presence: true, if: "description.nil?"
@@ -5,4 +17,8 @@ class Article < ActiveRecord::Base
 
 	validates :body, length: {maximum: 1500, minimum: 5}, if: "!body.nil?"
 	validates :description, length: {maximum: 150, minimum: 5}, if: "!description.nil?"
+
+   belongs_to :user
+   has_many :comments
+   has_and_belongs_to_many :categories
 end
