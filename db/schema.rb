@@ -15,8 +15,8 @@ ActiveRecord::Schema.define(version: 20160603080520) do
 
   create_table "articles", force: :cascade do |t|
     t.string   "title",       limit: 255
-    t.text   "description"
-    t.text   "body"
+    t.text     "description"
+    t.text     "body"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
@@ -67,5 +67,4 @@ ActiveRecord::Schema.define(version: 20160603080520) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
-
 end

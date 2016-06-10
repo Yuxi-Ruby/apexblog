@@ -4,5 +4,4 @@ class StaticPagesController < ApplicationController
     @categories = Category.all
     @user = User.all
   end
-
 end
