@@ -4,10 +4,11 @@
 #
 #  id          :integer          not null, primary key
 #  title       :string(255)
-#  description :string(255)
-#  body        :string(255)
+#  description :text
+#  body        :text
 #  created_at  :datetime
 #  updated_at  :datetime
+#  user_id     :integer
 #
 
 require 'test_helper'
