@@ -12,6 +12,7 @@ gem 'devise'
 gem 'figaro'
 gem 'rails_admin'
 gem 'annotate'
+gem 'tinymce-rails'
 
 group :doc do
   gem 'sdoc', require: false
