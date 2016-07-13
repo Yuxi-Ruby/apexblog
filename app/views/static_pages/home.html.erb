@@ -1,56 +1,54 @@
 <div class="objects">
-	<div class="container">
-		<div class="objects-grids">
-			<% @articles.each do |a| %>
-				<div class="col-md-4 objects-grid">
-						<div class="col-xs-5 mnth-date-left">
-							<h4><span> <%= a.created_at.strftime("%b %d, %Y") %> </span></h4>
-						</div>
-						<div class="col-xs-7 mnth-date-right">
-							<p><%=  a.title %></p>
-						</div>
-						<div class="clearfix"> </div>
-						<p class="quasi"><%= truncate(a.description, length:50) %></p>
-						<div class="more m1">
-						<a  class="hvr-curl-bottom-right"
-							<%= link_to  "Learn More", articles_path %></a>
-						</div>
-				</div>
-			<%end%>
-		</div>
-	</div>
-	<div class="objects-grids-bottom">
-		<div class="col-md-4 objects-grids-btm">
-			<div class="col-xs-4 objects-grids-btm-left">
-				<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-			</div>
-			<div class="col-xs-8 objects-grids-btm-right">
-				<h4><%= @articles.count %></h4>
-				<p>Our Articles of ApexBlog</p>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-		<div class="col-md-4 objects-grids-btm">
-			<div class="col-xs-4 objects-grids-btm-left">
-				<span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
-			</div>
-			<div class="col-xs-8 objects-grids-btm-right">
-				<h4><%= @categories_count %></h4>
-				<p>Categories of ApexBlog</p>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-		<div class="col-md-4 objects-grids-btm">
-			<div class="col-xs-4 objects-grids-btm-left">
-				<span class="glyphicon glyphicon-check" aria-hidden="true"></span>
-			</div>
-			<div class="col-xs-8 objects-grids-btm-right">
-				<h4><%= @users_count %></h4>
-				<p>Users in our Blog</p>
-			</div>
-			<div class="clearfix"> </div>
-		</div>
-		<div class="clearfix"> </div>
-	</div>
+  <div class="container">
+    <div class="objects-grids">
+      <% @articles.each do |article| %>
+        <div class="col-md-4 objects-grid">
+            <div class="col-xs-5 mnth-date-left">
+              <h4><span> <%= article.created_at.strftime("%b %d, %Y") %></span></h4>
+            </div>
+            <div class="col-xs-7 mnth-date-right">
+              <p><%= article.title %></p>
+            </div>
+            <div class="clearfix"> </div>
+            <p class="quasi"><%= truncate(article.description, length:50) %></p>
+            <div class="more">
+              <%= link_to "Read More", article_path(article), :class => "hvr-curl-bottom-right" %>
+            </div>
+        </div>
+      <%end%>
+    </div>
+  </div>
+  <div class="objects-grids-bottom">
+    <div class="col-md-4 objects-grids-btm">
+      <div class="col-xs-4 objects-grids-btm-left">
+        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
+      </div>
+      <div class="col-xs-8 objects-grids-btm-right">
+        <h4><%= @articles.count %></h4>
+        <p>Our Articles of ApexBlog</p>
+      </div>
+      <div class="clearfix"> </div>
+    </div>
+    <div class="col-md-4 objects-grids-btm">
+      <div class="col-xs-4 objects-grids-btm-left">
+        <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
+      </div>
+      <div class="col-xs-8 objects-grids-btm-right">
+        <h4><%= @categories_count %></h4>
+        <p>Categories of ApexBlog</p>
+      </div>
+      <div class="clearfix"> </div>
+    </div>
+    <div class="col-md-4 objects-grids-btm">
+      <div class="col-xs-4 objects-grids-btm-left">
+        <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
+      </div>
+      <div class="col-xs-8 objects-grids-btm-right">
+        <h4><%= @users_count %></h4>
+        <p>Users in our Blog</p>
+      </div>
+      <div class="clearfix"> </div>
+    </div>
+    <div class="clearfix"> </div>
+  </div>
 </div>
-

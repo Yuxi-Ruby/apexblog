@@ -7,11 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
   <link href='//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
-  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
   <%= csrf_meta_tags %>
 </head>
 <body>
-
   <div class="header">
     <div class="container">
       <div class="header-nav">
@@ -23,7 +21,7 @@
               <span class="icon-bar"></span>
             </button>
             <div class="logo">
-              <a class="navbar-brand" href="">ApexBlog <span>It's not what you do but how you do it</span></a>
+              <a class="navbar-brand" href="/">ApexBlog <span>It's not what you do but how you do it</span></a>
             </div>
           </div>
           <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
@@ -31,9 +29,8 @@
             <li><%= link_to "Home", root_path %></li>
             <li><%= link_to "Articles", articles_path %></li>
             <% if user_signed_in? %>
-              <li><%= link_to 'Edit profile', edit_user_registration_path %></li>
               <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
-              <li><%= link_to current_user.email, ""%></li>
+              <li><%= link_to current_user.name, edit_user_registration_path %></li>
             <% else %>
               <li><%= link_to 'Sign up', new_user_registration_path %></li>
               <li><%= link_to 'Login', new_user_session_path %></li>
@@ -43,22 +40,13 @@
         </nav>
       </div>
     </div>
+    <hr>
   </div>
   <div>
     <%= yield %>
   </div>
-    <div class="footer">
-        <p>Copyright © 2016 ApexBlog. All rights reserved | Design by <a href="">ApexTeam</a></p>
-      <div class="social-icons">
-        <ul>
-        <div class="text-center center-block">
-              <a href="#"><i id="social-fb" class="fa fa-facebook-square fa-3x social"></i></a>
-              <a href="#"><i id="social-tw" class="fa fa-twitter-square fa-3x social"></i></a>
-              <a href="#"><i id="social-gp" class="fa fa-google-plus-square fa-3x social"></i></a>
-        </div>
-        </ul>
-      </div>
-    </div>
+  <div class="footer">
+    <p>Copyright © 2016 ApexBlog. All rights reserved | Design by <a href="">ApexTeam</a></p>
+  </div>
 </body>
 </html>
-

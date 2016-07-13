@@ -1,146 +1,50 @@
-<!-- blog -->
-	<div class="blog">
-		<div class="container">
-			<div class="col-md-7 blog-left">
-				<div class="blog-left-grid">
-					<h4><%= @article.title %></h4>
-					<ul>
-						<li><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><%= @article.created_at %></li>
-						<li><a href="#"><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>10 Comments</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-user" aria-hidden="true"></span>Super User</a></li>
-						<li><a href="#"><span class="glyphicon glyphicon-tags" aria-hidden="true"></span>3 Tags</a></li>
-					</ul>
-					<img src="images/6.jpg" alt=" " class="img-responsive" />
-					<p><%= @article.body %></p>
-				</div>
-				<div class="social-icons1">
-					<ul>
-						<li><a href="#" class="fb1"></a></li>
-						<li><a href="#" class="twi"></a></li>
-						<li><a href="#" class="gg1"></a></li>
-						<li><a href="#" class="pn1"></a></li>
-					</ul>
-				</div>
-				<div class="com">
-					<h3>Comments</h3>
-					<ul class="media-list">
-					  <li class="media">
-						<div class="media-left">
-						  <a href="#">
-							<img class="media-object" src="images/3.jpg" alt="" />
-						  </a>
-						</div>
-						<div class="media-body">
-						  <h4 class="media-heading">Simmy</h4>
-						  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-						  scelerisque ante sollicitudin commodo. Cras purus odio,
-						  vestibulum in vulputate at, tempus viverra turpis.
-						  <a href="#">Reply</a>
-						</div>
-					  </li>
-					  <li class="media">
-						<div class="media-left">
-						  <a href="#">
-							<img class="media-object" src="images/2.jpg" alt="" />
-						  </a>
-						</div>
-						<div class="media-body">
-						  <h4 class="media-heading">Sandra Rickon</h4>
-						  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-						  scelerisque ante sollicitudin commodo. Cras purus odio,
-						  vestibulum in vulputate at, tempus viverra turpis.
-						  <a href="#">Reply</a>
-						</div>
-					  </li>
-					  <li class="media">
-						<div class="media-left">
-						  <a href="#">
-							<img class="media-object" src="images/4.jpg" alt="" />
-						  </a>
-						</div>
-						<div class="media-body">
-						  <h4 class="media-heading">Jhon Willium</h4>
-						  Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-						  scelerisque ante sollicitudin commodo. Cras purus odio,
-						  vestibulum in vulputate at, tempus viverra turpis.
-						  <a href="#">Reply</a>
-						</div>
-					  </li>
-					</ul>
-				</div>
-			</div>
-			<div class="col-md-5 blog-right">
-				<div class="blog-right1">
-					<div class="search">
-						<h3>Newsletter</h3>
-						<form>
-							<input type="text" value="Email..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email...';}" required="">
-							<input type="submit" value="Subscribe">
-						</form>
-					</div>
-					<div class="categories">
-						<h3>Categories</h3>
-						<ul>
-							<li><a href="#">Aliquam dapibus tincidunt</a></li>
-							<li><a href="#">Donec sollicitudin molestie</a></li>
-							<li><a href="#">Fusce feugiat malesuada odio</a></li>
-							<li><a href="#">Cum sociis natoque penatibus</a></li>
-							<li><a href="#">Magnis dis parturient montes</a></li>
-							<li><a href="#">Donec sollicitudin molestie</a></li>
-						</ul>
-					</div>
-					<div class="related-posts">
-						<h3>Related Posts</h3>
-						<div class="related-post">
-							<div class="related-post-left">
-								<a href="single.html"><img src="images/3.jpg" alt=" " /></a>
-							</div>
-							<div class="related-post-right">
-								<h4><a href="single.html">Donec sollicitudin</a></h4>
-								<p>Aliquam dapibus tincidunt metus.
-									<span>Praesent justo dolor, lobortis.</span>
-								</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="related-post">
-							<div class="related-post-left">
-								<a href="single.html"><img src="images/4.jpg" alt=" " /></a>
-							</div>
-							<div class="related-post-right">
-								<h4><a href="single.html">Donec sollicitudin</a></h4>
-								<p>Aliquam dapibus tincidunt metus.
-									<span>Praesent justo dolor, lobortis.</span>
-								</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-						<div class="related-post">
-							<div class="related-post-left">
-								<a href="single.html"><img src="images/2.jpg" alt=" " /></a>
-							</div>
-							<div class="related-post-right">
-								<h4><a href="single.html">Donec sollicitudin</a></h4>
-								<p>Aliquam dapibus tincidunt metus.
-									<span>Praesent justo dolor, lobortis.</span>
-								</p>
-							</div>
-							<div class="clearfix"> </div>
-						</div>
-					</div>
-				</div>
-			</div>
-			<div class="clearfix"> </div>
-			<div class="leave-a-comment">
-				<h3>Leave your comment Here</h3>
-				<form>
-					<input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-					<input type="text" value="Email..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email...';}" required="">
-					<input type="text" value="Phone Number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone Number';}" required="">
-					<textarea type="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type Your Comment here...';}" required="">Type Your Comment here...</textarea>
-					<input type="submit" value="Add Comment">
-				</form>
-			</div>
-		</div>
-	</div>
-<!-- //blog -->
+<div class="blog">
+  <div class="container">
+    <div class="col-md-7 blog-left">
+      <div class="blog-left-grid">
+        <h4><%= @article.title %></h4>
+        <ul>
+          <li><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><%= @article.created_at %></li>
+          <li><a href=""><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><%= @article.comments.count %> Comments</a></li>
+          <li><a href=""><span class="glyphicon glyphicon-user" aria-hidden="true"></span>User</a></li>
+          <li><a href=""><span class="glyphicon glyphicon-tags" aria-hidden="true"></span><%= @article.categories.count %></a></li>
+        </ul>
+        <p><%= @article.body %></p>
+      </div>
+      <div class="com">
+        <h3>Comments</h3>
+        <ul class="media-list">
+          <li class="media">
+            <div class="media-body">
+              <h4 class="media-heading">Simmy</h4>
+              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
+              scelerisque ante sollicitudin commodo. Cras purus odio,
+              vestibulum in vulputate at, tempus viverra turpis.
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-5 blog-right">
+      <div class="categories">
+        <h3>Categories</h3>
+        <% @categories.each do |category| %>
+          <ul>
+            <li><%= category.title %></li>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+    <div class="clearfix"> </div>
+    <div class="leave-a-comment">
+      <h3>Leave your comment Here</h3>
+      <form>
+        <input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
+        <input type="text" value="Email..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email...';}" required="">
+        <input type="text" value="Phone Number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone Number';}" required="">
+        <textarea type="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type Your Comment here...';}" required="">Type Your Comment here...</textarea>
+        <input type="submit" value="Add Comment">
+      </form>
+    </div>
+  </div>
+</div>
