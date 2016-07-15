@@ -13,6 +13,7 @@ gem 'figaro'
 gem 'rails_admin'
 gem 'annotate'
 gem 'tinymce-rails'
+gem 'bootstrap-sass'
 
 group :doc do
   gem 'sdoc', require: false
