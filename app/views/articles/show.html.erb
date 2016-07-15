@@ -9,7 +9,7 @@
           <li><a href=""><span class="glyphicon glyphicon-user" aria-hidden="true"></span>User</a></li>
           <li><a href=""><span class="glyphicon glyphicon-tags" aria-hidden="true"></span><%= @article.categories.count %></a></li>
         </ul>
-        <p><%= @article.body %></p>
+        <%= @article.body.html_safe %>
       </div>
       <div class="com">
         <h3>Comments</h3>

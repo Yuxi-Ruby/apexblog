@@ -10,7 +10,7 @@
               <p><%= article.title %></p>
             </div>
             <div class="clearfix"> </div>
-            <p class="quasi"><%= truncate(article.description, length:50) %></p>
+            <p class="quasi"><%= article.description.html_safe %></p>
             <div class="more">
               <%= link_to "Read More", article_path(article), :class => "hvr-curl-bottom-right" %>
             </div>

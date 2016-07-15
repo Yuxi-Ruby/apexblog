@@ -10,7 +10,7 @@
             <li><a href=""><span class="glyphicon glyphicon-user" aria-hidden="true"></span>User</a></li>
             <li><a href=""><span class="glyphicon glyphicon-tags" aria-hidden="true"></span><%= article.categories.count %></a></li>
           </ul>
-          <p><%= article.description %></p>
+          <%= article.description.html_safe %>
           <div class="more">
             <%= link_to "Read More", article_path(article), :class => "hvr-curl-bottom-right" %>
           </div>
