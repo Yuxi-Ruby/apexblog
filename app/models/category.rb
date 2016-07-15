@@ -9,7 +9,7 @@
 #
 
 class Category < ActiveRecord::Base
-  validates :title, presence: true,uniqueness: true, length:{ maximum: 20, minimum: 7 }
+  validates :title, presence: true, uniqueness: true, length:{ maximum: 20, minimum: 2 }
 
   has_and_belongs_to_many :articles
 
