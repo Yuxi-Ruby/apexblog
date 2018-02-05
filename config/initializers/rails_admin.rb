@@ -22,7 +22,9 @@ RailsAdmin.config do |config|
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
-    new
+    new do
+      except ['Comment']
+    end
     export
     bulk_delete
     show
@@ -35,5 +37,6 @@ RailsAdmin.config do |config|
     # history_show
   end
 
-  config.excluded_models << "Comment"
+  # config.excluded_models << "Comment"
+
 end
