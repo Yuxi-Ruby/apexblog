@@ -289,12 +289,17 @@ p.quasi{
   padding: 1em 2em;
   background: #F0F0E8;
 }
-.blog-left ul li{
+
+.blog-left .blog-left-grid ul li{
   display: inline-block;
   margin: 0 3em 0 0;
+}
+
+.blog-left ul li{
   font-size: 14px;
   color: #B46425;
 }
+
 .blog-left ul li span,.blog-left ul li a span{
   left:-1em;
 }
@@ -920,4 +925,9 @@ ul.media-list {
     -o-background-size: cover;
     -ms-background-size: cover;
   }
+}
+
+.hour-comment{
+  font-size: 15px;
+  color: #888;
 }

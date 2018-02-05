@@ -41,5 +41,7 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { registrations: 'registrations' }
 
-  resources :articles, :only => [:index, :show]
+  resources :articles , :only => [:index, :show] do
+    resources :comments
+  end
 end
