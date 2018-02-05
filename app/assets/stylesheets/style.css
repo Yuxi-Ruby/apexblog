@@ -921,3 +921,7 @@ ul.media-list {
     -ms-background-size: cover;
   }
 }
+
+.search-content{
+  margin-bottom: 30px;
+}
