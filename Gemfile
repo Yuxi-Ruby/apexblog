@@ -14,7 +14,6 @@ gem 'rails_admin'
 gem 'annotate'
 gem 'tinymce-rails'
 gem 'bootstrap-sass'
-gem 'activerecord-search', '~> 0.2.2'
 
 group :doc do
   gem 'sdoc', require: false
