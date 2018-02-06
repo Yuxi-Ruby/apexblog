@@ -2,21 +2,19 @@
   <div class="container">
     <div class="col-md-7 blog-left">
       <% @articles.each do |article| %>    
-        <% unless article.private? %>
-          <div class="blog-left-grid">
-            <h4><%= link_to article.title, article_path(article) %></h4>
-            <ul>
-              <li><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><%= article.created_at %></li>
-              <li><a href=""><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><%= article.comments.count %> Comments</a></li>
-              <li><a href=""><span class="glyphicon glyphicon-user" aria-hidden="true"></span>User</a></li>
-              <li><a href=""><span class="glyphicon glyphicon-tags" aria-hidden="true"></span><%= article.categories.count %></a></li>
-            </ul>
-            <%= article.description.html_safe %>
-            <div class="more">
-              <%= link_to "Read More", article_path(article), :class => "hvr-curl-bottom-right" %>
-            </div>
+        <div class="blog-left-grid">
+          <h4><%= link_to article.title, article_path(article) %></h4>
+          <ul>
+            <li><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><%= article.created_at %></li>
+            <li><a href=""><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><%= article.comments.count %> Comments</a></li>
+            <li><a href=""><span class="glyphicon glyphicon-user" aria-hidden="true"></span>User</a></li>
+            <li><a href=""><span class="glyphicon glyphicon-tags" aria-hidden="true"></span><%= article.categories.count %></a></li>
+          </ul>
+          <%= article.description.html_safe %>
+          <div class="more">
+            <%= link_to "Read More", article_path(article), :class => "hvr-curl-bottom-right" %>
           </div>
-        <% end %>
+        </div>
       <% end %>
     </div>
     <div class="col-md-5 blog-right">
