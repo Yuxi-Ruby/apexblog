@@ -1,6 +1,6 @@
 class ArticlesController < ApplicationController
   def index
-    @articles = Article.search(params[:term])
+    @articles = Article.search(params[:term]).paginate(page: params[:page], per_page: 3)
     @categories = Category.all
   end
 
