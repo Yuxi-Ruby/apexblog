@@ -937,6 +937,10 @@ ul.media-list {
   }
 }
 
+.search-content{
+  margin-bottom: 30px;
+}
+
 /* Pagination */
 .pagination {
   background: #f1f1f1;
