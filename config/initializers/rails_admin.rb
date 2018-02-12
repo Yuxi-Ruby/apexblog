@@ -22,9 +22,7 @@ RailsAdmin.config do |config|
   config.actions do
     dashboard                     # mandatory
     index                         # mandatory
-    new do
-      except ['Comment']
-    end
+    new
     export
     bulk_delete
     show
