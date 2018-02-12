@@ -1,7 +1,7 @@
 function tinymce_load(){
   tinymce.remove();
   tinymce.init({
-    selector: "textarea",
+    selector: "textarea:not('.comment-user')",
     height: 250,
     theme: 'modern',
     plugins: [

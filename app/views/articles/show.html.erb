@@ -14,14 +14,7 @@
       <div class="com">
         <h3>Comments</h3>
         <ul class="media-list">
-          <li class="media">
-            <div class="media-body">
-              <h4 class="media-heading">Simmy</h4>
-              Cras sit amet nibh libero, in gravida nulla. Nulla vel metus
-              scelerisque ante sollicitudin commodo. Cras purus odio,
-              vestibulum in vulputate at, tempus viverra turpis.
-            </div>
-          </li>
+          <%= render @article.comments %>
         </ul>
       </div>
     </div>
@@ -38,13 +31,7 @@
     <div class="clearfix"> </div>
     <div class="leave-a-comment">
       <h3>Leave your comment Here</h3>
-      <form>
-        <input type="text" value="Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}" required="">
-        <input type="text" value="Email..." onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email...';}" required="">
-        <input type="text" value="Phone Number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone Number';}" required="">
-        <textarea type="text" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Type Your Comment here...';}" required="">Type Your Comment here...</textarea>
-        <input type="submit" value="Add Comment">
-      </form>
+      <%= render 'comments/form' %>
     </div>
   </div>
 </div>

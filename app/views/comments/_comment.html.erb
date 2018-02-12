@@ -1,0 +1,18 @@
+<li class="media">
+  <div class="media-body">
+    <h4 class="media-heading">
+       <% if comment.user %>
+        <%= comment.user.name %>
+       <% else %>
+        Anonymous
+       <% end %>
+         
+       <span class="pull-right hour-comment">
+        <i class="glyphicon glyphicon-time"></i>
+        <%= localize(comment.created_at, :format => :long) %>
+      </span>    
+    </h4>
+    <%= comment.description %>
+  </div>
+  <hr/>
+</li>

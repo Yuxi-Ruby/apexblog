@@ -35,6 +35,8 @@ RailsAdmin.config do |config|
     # history_show
   end
 
+ # config.excluded_models << "Comment"
+
   config.model Article do
     edit do
       field :title 
