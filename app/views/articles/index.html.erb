@@ -1,7 +1,17 @@
 <div class="blog">
   <div class="container">
+    <div class="col-md-offset-7 col-md-5 search-content">
+        <%= form_tag(articles_path, method: :get) do %>
+          <div class="input-group">
+            <%= text_field_tag :term, params[:term], :class => 'form-control', autofocus: true %>
+            <span class="input-group-btn">
+              <%= submit_tag 'Search', :class => 'btn btn-default' %>
+            </span>   
+          </div>
+        <% end %>
+    </div>
     <div class="col-md-7 blog-left">
-      <% @articles.each do |article| %>
+      <% @articles.each do |article| %>    
         <div class="blog-left-grid">
           <h4><%= link_to article.title, article_path(article) %></h4>
           <ul>
@@ -16,6 +26,7 @@
           </div>
         </div>
       <% end %>
+      <%= will_paginate @articles %>
     </div>
     <div class="col-md-5 blog-right">
       <div class="categories">

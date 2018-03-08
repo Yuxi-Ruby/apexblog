@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>ApexBlog</title>
+  <title>RogueBlog</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -21,7 +21,7 @@
               <span class="icon-bar"></span>
             </button>
             <div class="logo">
-              <a class="navbar-brand" href="/">ApexBlog <span>It's not what you do but how you do it</span></a>
+              <a class="navbar-brand" href="/">RogueBlog <span>It's not what you do but how you do it</span></a>
             </div>
           </div>
           <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
@@ -40,13 +40,12 @@
         </nav>
       </div>
     </div>
-    <hr>
   </div>
-  <div>
+  <div class="yield-content">
     <%= yield %>
   </div>
-  <div class="footer">
-    <p>Copyright © 2016 ApexBlog. All rights reserved | Design by <a href="">ApexTeam</a></p>
-  </div>
+  <footer class="footer">
+    <p>Copyright © 2018 RogueBlog. All rights reserved | Design by <a href="">RogueTeam</a></p>
+  </footer>
 </body>
 </html>

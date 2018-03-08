@@ -14,6 +14,7 @@ gem 'rails_admin'
 gem 'annotate'
 gem 'tinymce-rails'
 gem 'bootstrap-sass'
+gem 'will_paginate', '~> 3.1', '>= 3.1.6'
 
 group :doc do
   gem 'sdoc', require: false
