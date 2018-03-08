@@ -1,14 +1,51 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Apexblog</title>
+  <title>RogueBlog</title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href='//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+  <div class="header">
+    <div class="container">
+      <div class="header-nav">
+        <nav class="navbar navbar-default">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <div class="logo">
+              <a class="navbar-brand" href="/">RogueBlog <span>It's not what you do but how you do it</span></a>
+            </div>
+          </div>
+          <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
+           <ul class="nav navbar-nav cl-effect-14">
+            <li><%= link_to "Home", root_path %></li>
+            <li><%= link_to "Articles", articles_path %></li>
+            <% if user_signed_in? %>
+              <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+              <li><%= link_to current_user.name, edit_user_registration_path %></li>
+            <% else %>
+              <li><%= link_to 'Sign up', new_user_registration_path %></li>
+              <li><%= link_to 'Login', new_user_session_path %></li>
+            <% end%>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <div class="yield-content">
+    <%= yield %>
+  </div>
+  <footer class="footer">
+    <p>Copyright © 2018 RogueBlog. All rights reserved | Design by <a href="">RogueTeam</a></p>
+  </footer>
 </body>
 </html>

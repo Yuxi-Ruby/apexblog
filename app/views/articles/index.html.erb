@@ -1,0 +1,42 @@
+<div class="blog">
+  <div class="container">
+    <div class="col-md-offset-7 col-md-5 search-content">
+        <%= form_tag(articles_path, method: :get) do %>
+          <div class="input-group">
+            <%= text_field_tag :term, params[:term], :class => 'form-control', autofocus: true %>
+            <span class="input-group-btn">
+              <%= submit_tag 'Search', :class => 'btn btn-default' %>
+            </span>   
+          </div>
+        <% end %>
+    </div>
+    <div class="col-md-7 blog-left">
+      <% @articles.each do |article| %>    
+        <div class="blog-left-grid">
+          <h4><%= link_to article.title, article_path(article) %></h4>
+          <ul>
+            <li><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><%= article.created_at %></li>
+            <li><a href=""><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><%= article.comments.count %> Comments</a></li>
+            <li><a href=""><span class="glyphicon glyphicon-user" aria-hidden="true"></span>User</a></li>
+            <li><a href=""><span class="glyphicon glyphicon-tags" aria-hidden="true"></span><%= article.categories.count %></a></li>
+          </ul>
+          <%= article.description.html_safe %>
+          <div class="more">
+            <%= link_to "Read More", article_path(article), :class => "hvr-curl-bottom-right" %>
+          </div>
+        </div>
+      <% end %>
+      <%= will_paginate @articles %>
+    </div>
+    <div class="col-md-5 blog-right">
+      <div class="categories">
+        <h3>Categories</h3>
+        <% @categories.each do |category| %>
+          <ul>
+            <li><%= category.title %></li>
+          </ul>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
