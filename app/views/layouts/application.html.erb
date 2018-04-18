@@ -6,6 +6,7 @@
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <link href="https://fonts.googleapis.com/css?family=Coiny" rel="stylesheet">
   <link href='//fonts.googleapis.com/css?family=Ubuntu:400,300,300italic,400italic,500,500italic,700,700italic' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
@@ -13,8 +14,22 @@
   <div class="header">
     <div class="container">
       <div class="header-nav">
-        <nav class="navbar navbar-default">
-          <div class="navbar-header">
+        <nav class="menuCll">
+          <ul class="nav">
+           <li><%= link_to "Home", root_path %></li>
+           <!-- <li><%= link_to "Articles", articles_path %></li> -->
+           <li><%= link_to "Members", articles_path %></li>
+           <li><%= link_to "Search", search_index_path %></li>
+           <li><%= link_to 'X', new_user_session_path %></li>
+           <!-- <% if user_signed_in? %>
+             <li><%= link_to 'Logout', destroy_user_session_path, method: :delete %></li>
+             <li><%= link_to current_user.name, edit_user_registration_path %></li>
+           <% else %>
+             <li><%= link_to 'Sign up', new_user_registration_path %></li>
+             <li><%= link_to 'X', new_user_session_path %></li>
+           <% end%> -->
+           </ul>
+          <!-- <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -36,16 +51,43 @@
               <li><%= link_to 'Login', new_user_session_path %></li>
             <% end%>
             </ul>
-          </div>
+
+          </div> -->
         </nav>
       </div>
     </div>
+    <div class="container2">
+            <div class="animate-area">
+            </div>
+        </div>
+  </div>
+  <div class="jumbotron2">
+    <img src="/assets/fnd-grass.png" alt="" class="background">
+    <ul class="overflow-layers">
+      <li ><img src="/assets/fnd-grass.png" alt="" id="layer-1" class="layer"></li>
+      <li ><img src="/assets/arboles.png" alt="" id="layer-2" class="layer"></li>
+
+      <li><img src="/assets/arbol.png" alt="" id="tree1"></li>
+      <li><img src="/assets/arbol.png" alt="" id="tree2"></li>
+
+
+      <div class="coat">
+        <img src="/assets/logo-shield.png" alt="" class="shield">
+        <img src="/assets/logo-sword.png" alt="" class="sword">
+        <img src="/assets/logo-text.png" alt="" class="name">
+      </div>
+      </ul>
   </div>
   <div class="yield-content">
     <%= yield %>
   </div>
+
+  <div class="footerBg">
+    <img src="/assets/Dungeon.png" alt="" class="pd">
+  </div>
   <footer class="footer">
-    <p>Copyright © 2018 RogueBlog. All rights reserved | Design by <a href="">RogueTeam</a></p>
+
+    <p>Copyright © 2018 RogueBlog. All rights reserved | Design by <a href="">RogueTeam</a> <a href="/users/sign_in">Login</a></p>
   </footer>
 </body>
 </html>

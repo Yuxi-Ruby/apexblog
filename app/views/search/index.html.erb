@@ -1,0 +1,36 @@
+<div class="objects">
+  <div class="container">
+    <img src="/assets/Group106.png" alt="" id="dead">
+    <img src="/assets/Group106.png" alt="" id="dead2">
+    <div class="contentIsland" id="chest123">
+      <img src="/assets/cofre.png" alt="" id="chest1">
+      <img src="/assets/cofre.png" alt="" id="chest2">
+      <img src="/assets/cofre.png" alt="" id="chest3">
+      <img src="/assets/cofre.png" alt="" id="chest4">
+      <img src="/assets/cofre.png" alt="" id="chest5">
+      <img src="/assets/cofre.png" alt="" id="chest6">
+    </div>
+    <div class="objects-grids">
+      <%= form_tag(articles_path, method: :get) do %>
+        <div class="input-group">
+          <span class="input-group-btn">
+            <%= submit_tag '', :class => 'btn btn-default searchBtn' %>
+          </span>
+          <%= text_field_tag :term, params[:term], :class => 'form-control', autofocus: true %>
+        </div>
+      <% end %>
+    </div>
+
+  </div>
+
+</div>
+<div class="floorAssets">
+  <img src="/assets/BAT.png" alt="" id="bat">
+  <img src="/assets/BAT2.png" alt="" id="bat2">
+  <img src="/assets/BAT.png" alt="" id="bat3">
+  <img src="/assets/BAT2.png" alt="" id="bat4">
+  <img src="/assets/hongos.png" alt="" id="hongos">
+  <img src="/assets/Group11.png" alt="" id="rock">
+  <img src="/assets/cofre.png" alt="" id="hongos2">
+  <img src="/assets/blob.png" alt="" id="blob">
+</div>

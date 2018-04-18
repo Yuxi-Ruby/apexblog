@@ -35,6 +35,8 @@
 #
 
 Rails.application.routes.draw do
+  get 'search/index'
+
   root to: "static_pages#home"
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
