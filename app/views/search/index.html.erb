@@ -10,19 +10,35 @@
       <img src="/assets/cofre.png" alt="" id="chest5">
       <img src="/assets/cofre.png" alt="" id="chest6">
     </div>
-    <div class="objects-grids">
+    <div class="objects-grids search-container">
       <%= form_tag(articles_path, method: :get) do %>
         <div class="input-group">
           <span class="input-group-btn">
             <%= submit_tag '', :class => 'btn btn-default searchBtn' %>
           </span>
-          <%= text_field_tag :term, params[:term], :class => 'form-control', autofocus: true %>
+          <%= text_field_tag :search, params[:search], :class => 'form-control', autofocus: true %>
         </div>
       <% end %>
     </div>
-
+  
+  <div class="objects-grids">
+    <% @articles.each do |article| %>
+        <div class="col-md-4 objects-grid border double pd0">
+          <div class="border-tl"></div>
+          <div class="border-tr"></div>
+          <div class="border-br"></div>
+          <div class="border-bl"></div>
+          <div class="cont">
+            <img src="/assets/office.jpeg" alt="">
+          </div>
+          <div class="st"><%= article.title %></div>
+          <div class="wh normalText"><%= article.description.html_safe %></div>
+          <div class="borderBtn"><%= link_to "<button class='pixelBtn wh'>READ</button>".html_safe, article_path(article) %></div>
+        </div>
+    <%end%>
   </div>
 
+  </div>
 </div>
 <div class="floorAssets">
   <img src="/assets/BAT.png" alt="" id="bat">

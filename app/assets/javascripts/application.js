@@ -42,3 +42,6 @@ document.addEventListener('DOMContentLoaded',function(event){
 this.move = function(){
 
 }
+
+
+

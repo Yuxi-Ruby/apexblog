@@ -236,6 +236,10 @@ body a:hover {
   background: #B46425;
 }
 
+.search-container form .form-control{
+  color: #fff !important;
+}
+
 .form-control {
     display: block;
     width: 100%;
@@ -244,7 +248,7 @@ body a:hover {
     font-weight:bold;
     font-size: 50px;
     line-height: 1.428571429;
-    color: #ffffff;
+    color: #000;
     background-color: transparent;
         border: none;
     /* background-image:  url("./lupa.png")no-repeat ; */
@@ -264,7 +268,7 @@ body a:hover {
     box-shadow: unset;
 }
 .btn-default.searchBtn {
-  color: #fff;
+      color: #fff;
       background-color: transparent;
       background: url(./lupa.png)no-repeat;
       background-size: 50px 50px;
@@ -576,6 +580,7 @@ ul.media-list {
 /*-- single --*/
 
 .media-body h4 {
+  text-align: left;
   color: #7AC3B6;
   font-size: 1.5em;
   margin: 0 0 1em;
@@ -595,8 +600,8 @@ ul.media-list {
 }
 
 .media-body {
-  color: #999;
-  font-size: 14px;
+  color: #fff;
+  font-size: 17px;
   margin: 0;
   line-height: 1.8em;
 }
@@ -1119,8 +1124,8 @@ ul.media-list {
 }
 
 .hour-comment {
-  font-size: 15px;
-  color: #888;
+  font-size: 17px;
+  color: #fff;
 }
 
 .search-content {
@@ -1326,7 +1331,7 @@ ul.media-list {
   background: url("./XMLID_1_.png") !important;
   background-size: 250px !important;
   width: 250px;
-  height: 245px;
+  height: 244px;
   position: absolute;
   left: calc(50% - 125px);
 }
@@ -1669,4 +1674,13 @@ ul.media-list {
 }
 .normalText {
   font-family: "Helvetica Neue", Helvetica;
+}
+
+#new_user .form-group label {
+  color: #000;
+  font-weight: normal;
+}
+
+#new_user .form-group .form-control {
+  border: 1px solid #ccc;
 }
