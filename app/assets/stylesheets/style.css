@@ -1320,14 +1320,13 @@ ul.media-list {
 /*menu styles*/
 
 .menuCll {
-  z-index: 10;
   background: url("./menusmall.png") !important;
   background-size: 100px !important;
   width: 100px;
   height: 88px;
   position: absolute;
   left: calc(50% - 50px);
-  z-index: 9;
+  z-index: 10;
 }
 
 .menuCll ul {
