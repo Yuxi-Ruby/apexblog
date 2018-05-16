@@ -40,8 +40,8 @@
             <div class="cont">
               <img src="/assets/office.jpeg" alt="">
             </div>
-            <div class="st"><%= article.title %></div>
-            <div class="wh normalText"><%= article.description.html_safe %></div>
+            <div class="st" title="<%= article.title %>"><%= article.title.slice(0..25) %></div>
+            <div class="wh normalText" title="<%= article.description.html_safe %>"><%= article.description.slice(0..50).html_safe %></div>
             <div class="borderBtn"><%= link_to "<button class='pixelBtn wh'>READ</button>".html_safe, article_path(article) %></div>
           </div>
       <%end%>
