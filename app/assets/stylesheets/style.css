@@ -1320,6 +1320,7 @@ ul.media-list {
 /*menu styles*/
 
 .menuCll {
+  z-index: 10;
   background: url("./menusmall.png") !important;
   background-size: 100px !important;
   width: 100px;
