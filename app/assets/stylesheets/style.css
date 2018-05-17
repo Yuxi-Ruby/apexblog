@@ -1732,3 +1732,48 @@ ul.media-list {
 #new_user .form-group .form-control {
   border: 1px solid #ccc;
 }
+
+.main-content-modal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+
+.body-modal {
+  width: 80%;
+  height: 80%;
+}
+
+.button-modal {
+  height: 10%;
+}
+
+.content-modal {
+  background: #fff
+}
+
+.profile-modal,
+.content-modal {
+  height: 90%;
+}
+
+html body #modal .controls {
+  margin-top: 11px;
+  float: right;
+  margin-right: 156px;
+}
+
+.profile-modal {
+  outline: 7px solid #888888;
+  background: #34333B;
+  padding: 0;
+  overflow-y: auto;
+}
+
+.profile-modal .authorBio,
+.profile-modal .single {
+  border: none;
+  background: transparent;
+}
