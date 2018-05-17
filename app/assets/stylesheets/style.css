@@ -1179,6 +1179,10 @@ ul.media-list {
   color: #fff;
 }
 
+.bodyCard{
+  padding: 0 10px;
+}
+
 .bk {
   color: #000;
 }
