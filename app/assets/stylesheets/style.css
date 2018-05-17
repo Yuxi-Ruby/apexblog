@@ -1180,7 +1180,9 @@ ul.media-list {
 }
 
 .bodyCard{
-  padding: 0 10px;
+  padding: 0 20px;
+  text-align: justify;
+  text-justify: inter-word;
 }
 
 .bk {
