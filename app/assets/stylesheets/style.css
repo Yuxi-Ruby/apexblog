@@ -1270,7 +1270,8 @@ ul.media-list {
   font-size: 30px;
   text-transform: uppercase;
   white-space: nowrap;
-  overflow-x: auto;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
 .st::-webkit-scrollbar {
@@ -1286,6 +1287,22 @@ ul.media-list {
   border-radius: 10px;
   background: rgba(204, 204, 204, 0.5);
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+}
+
+.st span.marquee {
+  display: inline-block;
+  padding-left: 100%;  /* show the marquee just outside the paragraph */
+  animation: marquee 5s linear infinite;
+}
+
+.st span.marquee:hover {
+  animation-play-state: paused
+}
+
+/* Make it move */
+@keyframes marquee {
+  0%   { transform: translate(0, 0); }
+  100% { transform: translate(-100%, 0); }
 }
 
 .st, .normalText{

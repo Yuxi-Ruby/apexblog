@@ -40,7 +40,7 @@
             <div class="cont">
               <img src="/assets/office.jpeg" alt="">
             </div>
-            <div class="st" title="<%= article.title.gsub(/<\/?[^>]*>/, "").html_safe %>"><marquee direction="left"><%= article.title.gsub(/<\/?[^>]*>/, "").html_safe %></marquee></div>
+            <div class="st" title="<%= article.title.gsub(/<\/?[^>]*>/, "").html_safe %>"><span class="marquee"><%= article.title.gsub(/<\/?[^>]*>/, "").html_safe %></span></div>
             <div class="wh normalText bodyCard" title="<%= article.description.gsub(/<\/?[^>]*>/, "").html_safe %>"><%= article.description.gsub(/<\/?[^>]*>/, "").slice(0..50).html_safe %>...</div>
             <div class="borderBtn"><%= link_to "<button class='pixelBtn wh'>READ</button>".html_safe, article_path(article) %></div>
           </div>
