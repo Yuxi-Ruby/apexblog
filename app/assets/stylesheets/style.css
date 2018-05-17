@@ -604,6 +604,8 @@ ul.media-list {
   font-size: 17px;
   margin: 0;
   line-height: 1.8em;
+  background: #7d62e0;
+  padding: 13px;
 }
 
 .leave-a-comment {
