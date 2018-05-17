@@ -36,6 +36,7 @@
 
 Rails.application.routes.draw do
   get 'search/index'
+  get 'members/index'
 
   root to: "static_pages#home"
 
