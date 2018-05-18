@@ -1777,3 +1777,8 @@ html body #modal .controls {
   border: none;
   background: transparent;
 }
+
+.responsiveImg{
+  width: 100%;
+  height: auto;
+}
