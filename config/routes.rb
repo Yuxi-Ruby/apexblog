@@ -35,6 +35,7 @@
 #
 
 Rails.application.routes.draw do
+  
   root to: "static_pages#home"
 
   mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
@@ -44,4 +45,6 @@ Rails.application.routes.draw do
   resources :articles , :only => [:index, :show] do
     resources :comments
   end
+
+  resources :members , :only => [:index]
 end

@@ -23,14 +23,15 @@ class Article < ActiveRecord::Base
   has_many :comments
   has_and_belongs_to_many :categories
 
-  def self.search(term)
-    if term
+  def self.search(search)
+    if search
       includes(:categories).where(
         "categories.title ILIKE ? OR articles.title ILIKE ? OR articles.description ILIKE ? OR articles.body ILIKE ?", 
-        "%#{term}%", "%#{term}%", "%#{term}%", "%#{term}%"
+        "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%"
       ).references(:categories)
     else
       all
     end
   end
+  
 end
