@@ -17,7 +17,7 @@
           <h3 class="tagsTitle">Tags:</h3>
           <ul>
             <% @categories.each do |category| %>
-              <li>
+              <li class="tag_search">
                 <%= link_to category.title, { :action => "find_articles", :tag => category.title }, method: :post, :remote => true %>
               </li>
             <% end %>
