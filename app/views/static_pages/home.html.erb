@@ -8,82 +8,31 @@
 
     </div>
 
-    <div class="objects-grids search-container">
-      <%= form_tag(root_path, method: :get) do %>
-        <div class="input-group">
-          <span class="input-group-btn">
-            <%= submit_tag '', :class => 'btn btn-default searchBtn' %>
-          </span>
-          <%= text_field_tag :search, params[:search], :class => 'form-control', autofocus: true %>
+    <div class="objects-grids search-container tags clearfix">
+        <div class="input-group full-width">
+          <%= form_tag("find_articles", method: :post, id: "search_articles", remote: :true) do %>
+            <%= text_field_tag :search, params[:search], :class => 'search input_search', autofocus: true, placeholder: 'Search' %>
+          <% end %>
+      
+          <h3 class="tagsTitle">Tags:</h3>
+          <ul>
+            <% @categories.each do |category| %>
+              <li>
+                <%= link_to category.title, { :action => "find_articles", :tag => category.title }, method: :post, :remote => true %>
+              </li>
+            <% end %>
+          </ul>
         </div>
-      <% end %>
-    </div>
-    
-    <div class="objects-grids">
-      <% @articles.each do |article| %>
-          <div class="col-md-4 objects-grid border double pd0">
-        <!--<div class="col-xs-5 mnth-date-left">
-              <h4><span> <%= article.created_at.strftime("%b %d, %Y") %></span></h4>
-            </div>
-            <div class="col-xs-7 mnth-date-right">
-              <p><%= article.title %></p>
-            </div>
-            <div class="clearfix"> </div>
-            <p class="quasi"><%= article.description.html_safe %></p>
-            <div class="more">
-              <%= link_to "Read More", article_path(article), :class => "hvr-curl-bottom-right" %>
-            </div> -->
-            <div class="border-tl"></div>
-            <div class="border-tr"></div>
-            <div class="border-br"></div>
-            <div class="border-bl"></div>
-            <div class="cont">
-              <img src="/assets/office.jpeg" alt="">
-            </div>
-            <div class="st" title="<%= article.title.gsub(/<\/?[^>]*>/, "").html_safe %>"><span class="marquee"><%= article.title.gsub(/<\/?[^>]*>/, "").html_safe %></span></div>
-            <div class="wh normalText bodyCard" title="<%= article.description.gsub(/<\/?[^>]*>/, "").html_safe %>"><%= article.description.gsub(/<\/?[^>]*>/, "").slice(0..50).html_safe %>...</div>
-            <div class="borderBtn"><%= link_to "<button class='pixelBtn wh'>READ</button>".html_safe, article_path(article) %></div>
-          </div>
-      <%end%>
     </div>
 
+    <div class="objects-grids grid-container" id="articles">
+      <%= render 'articles' %>
+    </div>
+
+    <%= will_paginate @articles, :previous_label => '<', :next_label => '>' %>
   </div>
-  <%= will_paginate @articles, :previous_label => '<', :next_label => '>' %>
-  <!-- <div class="objects-grids-bottom">
-    <div class="col-md-4 objects-grids-btm">
-      <div class="col-xs-4 objects-grids-btm-left">
-        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-      </div>
-      <div class="col-xs-8 objects-grids-btm-right">
-        <h4><%= @articles.count %></h4>
-        <p>Our Articles of RogueBlog</p>
-      </div>
-      <div class="clearfix"> </div>
-    </div>
-    <div class="col-md-4 objects-grids-btm">
-      <div class="col-xs-4 objects-grids-btm-left">
-        <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
-      </div>
-      <div class="col-xs-8 objects-grids-btm-right">
-        <h4><%= @categories_count %></h4>
-        <p>Categories of RogueBlog</p>
-      </div>
-      <div class="clearfix"> </div>
-    </div>
-    <div class="col-md-4 objects-grids-btm">
-      <div class="col-xs-4 objects-grids-btm-left">
-        <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
-      </div>
-      <div class="col-xs-8 objects-grids-btm-right">
-        <h4><%= @users_count %></h4>
-        <p>Users in our Blog</p>
-      </div>
-      <div class="clearfix"> </div>
-    </div>
-    <div class="clearfix"> </div>
-  </div> -->
-
 </div>
+
 <div class="floorAssets">
   <img src="/assets/hongos.png" alt="" id="hongos">
   <img src="/assets/Group11.png" alt="" id="rock">

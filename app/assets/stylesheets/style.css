@@ -1144,6 +1144,7 @@ ul.media-list {
   text-align: center;
   padding: 1em;
   cursor: default;
+  margin: 100px 0 0;
 }
 
 .pagination a, .pagination span {
@@ -1781,4 +1782,103 @@ html body #modal .controls {
 .responsiveImg{
   width: 100%;
   height: auto;
+}
+
+.border_2 {
+  font-family: 'pixel', cursive;
+  text-align: center;
+  width: 100%;
+}
+
+.st_2 {
+  margin-top: 0;
+  padding: 10px;
+  background: #262129;
+  color: #F1CE4E;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  line-height: 1.25em;
+  font-weight: 300;
+}
+
+.bodyCard_2{
+  padding: 0 20px;
+  text-align: justify;
+  text-justify: inter-word;
+  font-size: 1.5em;
+}
+
+.grid-container {
+  display: grid;
+  grid-gap: 50px;
+  grid-template-columns: repeat(3, calc((100% - 100px) / 3));
+}
+
+.full-width{
+  width: 100%;
+}
+
+input.search[type=text] {
+  width: 100%;
+  box-sizing: border-box;
+  border: 2px solid #ccc;
+  border-radius: 4px;
+  font-size: 16px;
+  background-color: white;
+  background-image: url('https://www.w3schools.com/howto/searchicon.png');
+  background-position: 10px 10px; 
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.search-container{
+  margin-bottom: 50px;
+}
+
+.categoriesHome{
+  top: 141px;
+  margin-bottom: 5px;
+}
+
+.tagsTitle{
+  margin-top: 25px;
+  text-align: left;
+}
+
+.tags ul li{
+  list-style: none;
+  float: left;
+  color: #fff;
+  -webkit-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+  border: 1px solid #c15128;
+  background: #ffffff;
+  color: #c15128;
+  border-radius: 4px;
+  text-align: center;
+  margin: 10px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+.tags ul li:hover{
+  background: #c15128;
+  color: #fff;
+}
+
+.tags ul li.active{
+  background: #c15128;
+  color: #fff;
+}
+
+.tags ul li a {
+  margin: initial;
+  font-family: inherit;
+  color: inherit;
+  text-decoration: none;
+  display: block;
+  width: 100%;
+  padding: 2px 7px;
 }

@@ -1,0 +1,22 @@
+<% @articles.each do |article| %>
+  <div class="objects-grid border_2 double pd0">
+    <div class="border-tl"></div>
+    <div class="border-tr"></div>
+    <div class="border-br"></div>
+    <div class="border-bl"></div>
+    <div class="cont">
+      <img src="/assets/office.jpeg" alt="">
+    </div>
+    <div class="st_2">
+      <span>
+        <%= article.title.gsub(/<\/?[^>]*>/, "").html_safe %>
+      </span>
+    </div>
+    <div class="wh normalText bodyCard_2">
+      <%= article.description.gsub(/<\/?[^>]*>/, "").html_safe %>
+    </div>
+    <div class="borderBtn">
+      <%= link_to "<button class='pixelBtn wh'>READ</button>".html_safe, article_path(article) %>
+    </div>
+  </div>
+<%end%>

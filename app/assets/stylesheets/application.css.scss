@@ -631,3 +631,10 @@ html {
     background-color: #cc7a29;
   }
 }
+
+.border_2 {
+  .borderBtn {
+    left: calc(50% - 86px);
+    bottom: -25px;
+  }
+}

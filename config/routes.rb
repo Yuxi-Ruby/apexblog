@@ -47,4 +47,6 @@ Rails.application.routes.draw do
   end
 
   resources :members , :only => [:index]
+
+  post :find_articles, to: "static_pages#find_articles"
 end
