@@ -48,6 +48,12 @@ $(function () {
     $("li.tag_search.active").removeClass("active");
     $(this).addClass("active");
   });
+
+  $(".input_search").keypress(function (event) {
+    if (event.which == 13) {
+      $("li.tag_search.active").removeClass("active");
+    }
+  });
 });
 
 

@@ -10,7 +10,7 @@
 
     <div class="objects-grids search-container tags clearfix">
         <div class="input-group full-width">
-          <%= form_tag("find_articles", method: :post, id: "search_articles", remote: :true) do %>
+          <%= form_tag("find_articles", method: :post, remote: :true) do %>
             <%= text_field_tag :search, params[:search], :class => 'search input_search', autofocus: true, placeholder: 'Search' %>
           <% end %>
       
