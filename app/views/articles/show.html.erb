@@ -4,28 +4,28 @@
     <div class="col-md-9 blog-left">
       <div class="backNext">
         <div class="borderBtn">
-          <button class="pixelBtn wh left">BACK</button>
+          <% if @navigation[:current_page] > 0 %>
+            <button class="pixelBtn wh left">
+              <%= link_to "BACK", "#{@articles[@navigation[:current_page] - 1][:id] }" %>
+            </button>
+          <% end %>
         </div>
         <div class="borderBtn">
-          <button class="pixelBtn wh right">NEXT</button>
+          <% if @navigation[:current_page] + 1 < @navigation[:total_pages] %>
+            <button class='pixelBtn wh right'>
+              <%= link_to "NEXT", "#{@articles[@navigation[:current_page] + 1][:id] }" %>
+            </button>
+          <% end %>
         </div>
       </div>
-      <!-- <div class="blog-left-grid">
-
-        <h4><%= @article.title %></h4>
-        <ul>
-          <li><span class="glyphicon glyphicon-calendar" aria-hidden="true"></span><%= @article.created_at %></li>
-          <li><a href=""><span class="glyphicon glyphicon-envelope" aria-hidden="true"></span><%= @article.comments.count %> Comments</a></li>
-          <li><a href=""><span class="glyphicon glyphicon-user" aria-hidden="true"></span>User</a></li>
-          <li><a href=""><span class="glyphicon glyphicon-tags" aria-hidden="true"></span><%= @article.categories.count %></a></li>
-        </ul>
-        <%= @article.body.html_safe %>
-      </div> -->
-
       <div class="post">
         <img src="/assets/desk.png" alt="">
-        <h1 class="bk"><%= @article.title %></h1>
-        <p><%= @article.body.html_safe %></p>
+        <h1 class="bk">
+          <%= @article.title %>
+        </h1>
+        <p>
+          <%= @article.body.html_safe %>
+        </p>
       </div>
       <div class="com">
         <h3>Comments</h3>
@@ -42,38 +42,58 @@
         <h3>Author</h3>
         <div class="border2 single authorBio">
 
-          <img class="moving" src="/assets/Group106.png"  alt="">
+          <img class="moving" src="/assets/Group106.png" alt="">
           <img class="still" src="/assets/Group36.png" alt="">
           <div class="avatarEspec">
-            <p class="rText">Pepito Perez<br/>Developer<br/>Warrior<br/>Level: 56</p>
-            <div class="imgs"><img src="http://www.minecraftguides.org/wp-content/uploads/2012/07/steakC.gif" alt=""></div>
+            <p class="rText">Pepito Perez
+              <br/>Developer
+              <br/>Warrior
+              <br/>Level: 56</p>
+            <div class="imgs">
+              <img src="http://www.minecraftguides.org/wp-content/uploads/2012/07/steakC.gif" alt="">
+            </div>
 
-            <div class="imgs"><img src="https://vignette.wikia.nocookie.net/pixelpeople/images/6/6d/Coin.png/revision/latest?cb=20130301163700" alt=""></div>
+            <div class="imgs">
+              <img src="https://vignette.wikia.nocookie.net/pixelpeople/images/6/6d/Coin.png/revision/latest?cb=20130301163700"
+                alt="">
+            </div>
 
-            <div class="imgs"><img src="http://www.minecraftguides.org/wp-content/uploads/2012/07/steakC.gif" alt=""></div>
+            <div class="imgs">
+              <img src="http://www.minecraftguides.org/wp-content/uploads/2012/07/steakC.gif" alt="">
+            </div>
 
-            <div class="imgs"><img src="https://vignette.wikia.nocookie.net/pixelpeople/images/6/6d/Coin.png/revision/latest?cb=20130301163700" alt=""></div>
+            <div class="imgs">
+              <img src="https://vignette.wikia.nocookie.net/pixelpeople/images/6/6d/Coin.png/revision/latest?cb=20130301163700"
+                alt="">
+            </div>
 
-            <div class="imgs"><img src="http://www.minecraftguides.org/wp-content/uploads/2012/07/steakC.gif" alt=""></div>
+            <div class="imgs">
+              <img src="http://www.minecraftguides.org/wp-content/uploads/2012/07/steakC.gif" alt="">
+            </div>
 
-            <div class="imgs"><img src="https://vignette.wikia.nocookie.net/pixelpeople/images/6/6d/Coin.png/revision/latest?cb=20130301163700" alt=""></div>
+            <div class="imgs">
+              <img src="https://vignette.wikia.nocookie.net/pixelpeople/images/6/6d/Coin.png/revision/latest?cb=20130301163700"
+                alt="">
+            </div>
 
           </div>
         </div>
         <h3>Related</h3>
         <div class="objects-grids">
-              <div class="objects-grid border double pd0">
-                <div class="border-tl"></div>
-                <div class="border-tr"></div>
-                <div class="border-br"></div>
-                <div class="border-bl"></div>
-                <div class="cont">
-                  <img src="/assets/office.jpeg" alt="">
-                </div>
-                <div class="st">sdfgsh</div>
-                <div class="wh normalText">ghsdfhdfg</div>
-                <div class="borderBtn"><button class='pixelBtn wh'>READ</button></div>
-              </div>
+          <div class="objects-grid border double pd0">
+            <div class="border-tl"></div>
+            <div class="border-tr"></div>
+            <div class="border-br"></div>
+            <div class="border-bl"></div>
+            <div class="cont">
+              <img src="/assets/office.jpeg" alt="">
+            </div>
+            <div class="st">sdfgsh</div>
+            <div class="wh normalText">ghsdfhdfg</div>
+            <div class="borderBtn">
+              <button class='pixelBtn wh'>READ</button>
+            </div>
+          </div>
         </div>
 
       </div>

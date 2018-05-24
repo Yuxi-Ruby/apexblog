@@ -1306,10 +1306,6 @@ ul.media-list {
   100% { transform: translate(-100%, 0); }
 }
 
-.st, .normalText{
-  cursor: help;
-}
-
 .small {
   font-size: 80%;
 }
@@ -1881,4 +1877,10 @@ input.search[type=text] {
   display: block;
   width: 100%;
   padding: 2px 7px;
+}
+
+.pixelBtn a{
+  color: inherit;
+  display: block;
+  text-decoration: none;
 }
