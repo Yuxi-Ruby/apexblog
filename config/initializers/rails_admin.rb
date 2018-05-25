@@ -39,6 +39,7 @@ RailsAdmin.config do |config|
 
   config.model Article do
     edit do
+      field :image 
       field :title 
       field :description
       field :body

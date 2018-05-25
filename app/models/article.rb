@@ -12,6 +12,9 @@
 #
 
 class Article < ActiveRecord::Base
+  mount_uploader :image, ImageUploader
+  attr_accessor :asset, :asset_cache, :remove_asset
+  
   validates :title, presence: true, length: {maximum: 50, minimum: 5}
   validates :body, presence: true, if: "description.nil?"
   validates :description, presence: true, if: "body.nil?"

@@ -5,7 +5,11 @@
     <div class="border-br"></div>
     <div class="border-bl"></div>
     <div class="cont">
-      <img src="/assets/office.jpeg" alt="">
+      <% if article.image? %>
+        <%= image_tag(article.image.url, alt: 'Image') if article.image? %>
+      <% else %>
+        <img src="/assets/office.jpeg" alt="">
+      <% end %>
     </div>
     <div class="st_2">
       <span>

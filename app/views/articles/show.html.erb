@@ -19,7 +19,12 @@
         </div>
       </div>
       <div class="post">
-        <img src="/assets/desk.png" alt="">
+        <% if @article.image? %>
+          <%= image_tag(@article.image.url, alt: 'Image') if @article.image? %>
+        <% else %>
+          <img src="/assets/office.jpeg" alt="">
+        <% end %>
+        
         <h1 class="bk">
           <%= @article.title %>
         </h1>
