@@ -1864,17 +1864,17 @@ input.search[type=text] {
   font-size: 20px;
 }
 
-.tags ul li:hover{
+.tag_search:hover{
   background: #c15128;
   color: #fff;
 }
 
-.tags ul li.active{
+.tag_search.active{
   background: #c15128;
   color: #fff;
 }
 
-.tags ul li a {
+.tag_search a {
   margin: initial;
   font-family: inherit;
   color: inherit;
