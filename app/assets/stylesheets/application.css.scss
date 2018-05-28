@@ -638,3 +638,58 @@ html {
     bottom: -25px;
   }
 }
+
+.wave {
+  height: 17px;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+}
+
+.wave {
+  -webkit-animation: wave-animation 8.3s infinite linear; /* Safari 4+ */
+  -moz-animation: wave-animation 8.3s infinite linear; /* Fx 5+ */
+  -o-animation: wave-animation 8.3s infinite linear; /* Opera 12+ */
+  animation: wave-animation 8.3s infinite linear; /* IE 10+ */
+}
+
+@-webkit-keyframes wave-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1601px 0;
+  }
+}
+
+@-moz-keyframes wave-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1601px 0;
+  }
+}
+
+@-o-keyframes wave-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1601px 0;
+  }
+}
+
+@keyframes wave-animation {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 1601px 0;
+  }
+}
+
+.wave {
+  background: url("./wave.png") 0 0 repeat-x;
+}
+

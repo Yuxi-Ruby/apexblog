@@ -1810,6 +1810,11 @@ html body #modal .controls {
   grid-template-columns: repeat(3, calc((100% - 100px) / 3));
 }
 
+.clean-anchor {
+  margin: initial;
+  text-align: initial
+}
+
 .full-width{
   width: 100%;
 }

@@ -23,8 +23,9 @@ class Article < ActiveRecord::Base
   validates :description, length: {maximum: 200, minimum: 5}, if: "!description.nil?"
 
   belongs_to :user
-  has_many :comments
+  has_many :comments, :dependent => :destroy
   has_and_belongs_to_many :categories
+  
 
   def self.search(search, tag)
     if search

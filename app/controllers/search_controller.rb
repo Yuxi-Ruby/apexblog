@@ -1,6 +1,6 @@
 class SearchController < ApplicationController
   def index
-    @articles = Article.where(:private => false).search(params[:search]).paginate(page: params[:page], per_page: 6).take(6)
+    @articles = Article.where(:private => false).search(nil, nil).paginate(page: params[:page], per_page: 6).take(6)
     @categories = Category.all
   end
 end
