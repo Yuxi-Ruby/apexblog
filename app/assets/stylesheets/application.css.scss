@@ -69,9 +69,10 @@ $beige: #CEC7B0;
   }
 
   .overflow-layers #layer-2 {
-    top: -50vh;
-    left: -2.5vw;
-    width: 105vw;
+    margin-top: -17px;
+    top: -32vh;
+    left: 6.5vw;
+    width: 87vw;
   }
   // #layer-1{
   // 	background:url('./fnd-grass.png') no-repeat ;
@@ -88,17 +89,17 @@ $beige: #CEC7B0;
   }
 
   #tree1 {
-    width: 23vw;
+    width: 19vw;
     position: absolute;
-    left: -9vw;
-    top: -45vh;
+    left: 0vw;
+    top: -32vh;
   }
 
   #tree2 {
-    width: 25vw;
+    width: 18vw;
     position: absolute;
     right: 0;
-    top: -50vh;
+    top: -30vh;
   }
 
   .coat {
@@ -142,7 +143,7 @@ $beige: #CEC7B0;
 // }
 .contentIsland {
   position: absolute;
-  top:53vh;
+  top: 35vh;
   width: 80vw;
   left: 10vw;
   img {
@@ -200,10 +201,10 @@ $beige: #CEC7B0;
 
 }
 #munequito {
-  width: 7vw;
+  width: 6vw;
   position: absolute;
   right: 33vw;
-  top: 40vh;
+  top: 20vh;
 }
 #dead {
   width: 12vw;
