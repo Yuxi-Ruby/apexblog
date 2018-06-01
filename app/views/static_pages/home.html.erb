@@ -1,54 +1,47 @@
 <div class="objects">
   <div class="container">
-    <div class="objects-grids">
-      <% @articles.each do |article| %>
-          <div class="col-md-4 objects-grid">
-            <div class="col-xs-5 mnth-date-left">
-              <h4><span> <%= article.created_at.strftime("%b %d, %Y") %></span></h4>
-            </div>
-            <div class="col-xs-7 mnth-date-right">
-              <p><%= article.title %></p>
-            </div>
-            <div class="clearfix"> </div>
-            <p class="quasi"><%= article.description.html_safe %></p>
-            <div class="more">
-              <%= link_to "Read More", article_path(article), :class => "hvr-curl-bottom-right" %>
-            </div>
-          </div>
-      <%end%>
+    <% if user_signed_in? %>
+      <div class="thought-bubble">
+        <span>
+          Welcome, <%= current_user.name %>
+        </span>
+      </div>
+    <% end%>
+    <img src="/assets/munequito.png" alt="" id="munequito">
+    <div class="contentIsland" id="chest123">
+      <img src="/assets/cofre.png" alt="" id="chest2">
+      <img src="/assets/cofre.png" alt="" id="chest3">
+
     </div>
+
+    <div class="objects-grids search-container tags clearfix">
+        <div class="input-group full-width">
+          <%= form_tag("find_articles", method: :post, remote: :true) do %>
+            <%= text_field_tag :search, params[:search], :class => 'search input_search', autofocus: true, placeholder: 'Search' %>
+          <% end %>
+      
+          <h3 class="tagsTitle">Tags:</h3>
+          <ul>
+            <% @categories.each do |category| %>
+              <li class="tag_search">
+                <%= link_to category.title, { :action => "find_articles", :tag => category.title }, method: :post, :remote => true %>
+              </li>
+            <% end %>
+          </ul>
+        </div>
+    </div>
+
+    <div class="objects-grids grid-container" id="articles">
+      <%= render 'articles' %>
+    </div>
+
+    <%= will_paginate @articles, :previous_label => '<', :next_label => '>' %>
   </div>
-  <div class="objects-grids-bottom">
-    <div class="col-md-4 objects-grids-btm">
-      <div class="col-xs-4 objects-grids-btm-left">
-        <span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-      </div>
-      <div class="col-xs-8 objects-grids-btm-right">
-        <h4><%= @articles.count %></h4>
-        <p>Our Articles of RogueBlog</p>
-      </div>
-      <div class="clearfix"> </div>
-    </div>
-    <div class="col-md-4 objects-grids-btm">
-      <div class="col-xs-4 objects-grids-btm-left">
-        <span class="glyphicon glyphicon-tags" aria-hidden="true"></span>
-      </div>
-      <div class="col-xs-8 objects-grids-btm-right">
-        <h4><%= @categories_count %></h4>
-        <p>Categories of RogueBlog</p>
-      </div>
-      <div class="clearfix"> </div>
-    </div>
-    <div class="col-md-4 objects-grids-btm">
-      <div class="col-xs-4 objects-grids-btm-left">
-        <span class="glyphicon glyphicon-check" aria-hidden="true"></span>
-      </div>
-      <div class="col-xs-8 objects-grids-btm-right">
-        <h4><%= @users_count %></h4>
-        <p>Users in our Blog</p>
-      </div>
-      <div class="clearfix"> </div>
-    </div>
-    <div class="clearfix"> </div>
-  </div>
+</div>
+
+<div class="floorAssets">
+  <img src="/assets/hongos.png" alt="" id="hongos">
+  <img src="/assets/Group11.png" alt="" id="rock">
+  <img src="/assets/cofre.png" alt="" id="hongos2">
+  <img src="/assets/blob.png" alt="" id="blob">
 </div>

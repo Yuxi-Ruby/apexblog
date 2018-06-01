@@ -1,13 +1,55 @@
-<div class="col-md-4"></div>
-<div class="col-md-4">
-  <div class="panel panel-default">
+<div class="objects">
+  <div class="container">
+
+    <div class="objects-grids">
+      <div class="col-md-4"></div>
+      <div class="col-md-4 panel objects-grid border double pd0">
+        <div class="border-tl"></div>
+        <div class="border-tr"></div>
+        <div class="border-br"></div>
+        <div class="border-bl"></div>
+
+        <div class="st">Login
+        </div>
+        <div class="panel-body normalText">
+          <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+            <div class="form-group">
+
+              <!-- <%= f.label :user %> -->
+              <%= f.email_field :email, autofocus: true, class: "form-control", placeholder: "Email" %>
+            </div>
+
+            <div class="form-group">
+              <!-- <%= f.label :password %> -->
+              <%= f.password_field :password, autocomplete: "off", class: "form-control", placeholder: "Password" %>
+            </div>
+
+            <% if devise_mapping.rememberable? -%>
+              <div class="form-group">
+                <%= f.check_box :remember_me %>
+                  <%= f.label :remember_me %>
+              </div>
+              <% end -%>
+
+                <div class="form-group">
+                  <div class="borderBtn">
+                    <button class='pixelBtn wh'>
+                      <%= f.submit "Enter", class: "pixelBtn wh" %>
+                    </button>
+                  </div>
+                </div>
+                <% end %>
+        </div>
+
+        <!-- <div class="panel panel-default">
     <div class="panel-heading">
       <h2 class="panel-title">Log in</h2>
     </div>
+
     <div class="panel-body">
       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
         <div class="form-group">
-          <%= f.label :email %><br />
+          <%= f.label :user %><br />
           <%= f.email_field :email, autofocus: true, class: "form-control" %>
         </div>
 
@@ -28,12 +70,16 @@
       </div>
       <% end %>
     </div>
-    <div class="panel-footer">
-      <%= render "devise/shared/links" %>
-      <%= link_to 'Back', root_path %>
+  </div> -->
+      </div>
     </div>
+
   </div>
-</div>
-
-
-
+  <div class="floorAssets">
+    <img src="/assets/BAT.png" alt="" id="bat">
+    <img src="/assets/BAT2.png" alt="" id="bat2">
+    <img src="/assets/hongos.png" alt="" id="hongos">
+    <img src="/assets/Group11.png" alt="" id="rock">
+    <img src="/assets/cofre.png" alt="" id="hongos2">
+    <img src="/assets/blob.png" alt="" id="blob">
+  </div>

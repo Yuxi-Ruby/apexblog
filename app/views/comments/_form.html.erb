@@ -1,5 +1,8 @@
 <%= form_for([@article, @article.comments.build]) do |f| %>
-  <%= f.label :description %><br>
+  <!-- <%= f.label :description %><br> -->
   <%= f.text_area :description, :class => 'comment-user' %>
-  <%= f.submit %>
+  <div class="borderBtn">
+    <%= f.submit :value => 'Enter', :class => 'pixelBtn wh'%>
+  </div>
+
 <% end %>
