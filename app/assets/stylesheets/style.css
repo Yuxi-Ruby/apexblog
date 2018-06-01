@@ -1894,3 +1894,26 @@ input.search[type=text] {
   display: block;
   text-decoration: none;
 }
+
+.thought-bubble, .thought-bubble-members {
+  width: 11vw;
+  height: 11vw;
+  position: absolute;
+  right: 24vw;
+  top: 4vh;
+  text-align: center;
+  background: url(./thought-bubble.png) no-repeat center;
+  background-size: 11vw;
+  font-size: 1vw;
+  padding: 0 14px;
+}
+
+.thought-bubble span, .thought-bubble-members span{
+  top: 2.5vw;
+  position: relative;
+  box-sizing: content-box;
+}
+
+.thought-bubble-members {
+  left: 23vw;
+}

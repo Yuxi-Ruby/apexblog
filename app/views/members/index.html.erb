@@ -1,5 +1,12 @@
 <div class="blog">
   <div class="container">
+    <% if user_signed_in? %>
+      <div class="thought-bubble-members">
+        <span>
+          Welcome, <%= current_user.name %>
+        </span>
+      </div>
+    <% end%>
     <div class="contentIsland" id="chest123">
       <img src="/assets/munequito3.png" alt="" id="team1">
       <img src="/assets/Group11.png" alt="" id="team2">
